@@ -11,6 +11,7 @@ The function find_common_and_unique is provided below.
     - test_find_common_and_unique_complete_overlap()
     - test_find_common_and_unique_empty_sets()
 """
+from gettext import find
 
 
 def find_common_and_unique(set_a: set[str], set_b: set[str]) -> dict[str, set[str]]:
@@ -37,3 +38,35 @@ def find_common_and_unique(set_a: set[str], set_b: set[str]) -> dict[str, set[st
 # YOUR TESTS HERE
 # Write at least 5 tests for find_common_and_unique
 # Test function names must start with "test_"
+def test_find_common_and_unique_basic():
+    set_a = {"hello", "world", "banana"}
+    set_b = {"potato", "cheese", "banana"}
+    assert find_common_and_unique(set_a, set_b) == {
+        'common': {"banana"},
+        'only_a': {"hello", "world"},
+        'only_b': {"potato", "cheese"}
+    }
+
+def test_find_common_and_unique_no_overlap():
+    set_a = {"cherry", "apple"}
+    set_b = {"watermelon", "grape"}
+    assert find_common_and_unique(set_a, set_b) == {
+        'common': set(),
+        'only_a': {"cherry", "apple"},
+        'only_b': {"watermelon", "grape"}
+    }
+
+def test_find_common_and_unique_complete_overlap():
+    set_a = {"orange", "strawberry", "pineapple"}
+    set_b = {"orange", "strawberry", "pineapple"}
+    assert find_common_and_unique(set_a, set_b) == {
+        'common': {"orange", "strawberry", "pineapple"},
+        'only_a': set(),
+        'only_b': set()
+    }
+
+def test_find_common_and_unique_empty_sets():
+    set_a = {}
+    set_b = {}
+    
+

@@ -12,7 +12,7 @@ Create a function called process_game_ratings that:
 def process_game_ratings(ratings: list[int]) -> list[int]:
     """
     Filter out invalid game ratings and return valid ratings in ascending order.
-
+    
     Valid ratings are between 1 and 10.
 
     Args:
@@ -23,7 +23,8 @@ def process_game_ratings(ratings: list[int]) -> list[int]:
     """
     # YOUR CODE HERE
     # Remove pass when you implement
-    pass
+    valid_ratings = list(filter(lambda x: x >= 1 and x <= 10, ratings))
+    return sorted(valid_ratings)
 
 
 def test_process_game_ratings_basic():

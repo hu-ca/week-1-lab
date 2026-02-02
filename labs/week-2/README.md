@@ -35,7 +35,7 @@ Change in to the directory for the lab using `cd week-2-lab` in the terminal.
 
 To run tests for a specific exercise:
 ```bash
-uv run pytest exercise_1.py
+
 ```
 
 To run all exercises at once:
