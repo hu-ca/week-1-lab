@@ -18,6 +18,12 @@ class Pokemon:
         move_power: int,
     ) -> None:
         """Initialise a new Pokemon."""
+        self.name = name
+        self.max_hp = max_hp
+        self.attack = attack
+        self.defence = defence
+        self.move = move
+        self.move_power = move_power
         pass
 
     def take_damage(self, amount: int) -> None:
@@ -36,18 +42,22 @@ class Pokemon:
 
     def is_fainted(self) -> bool:
         """Check if the Pokemon has fainted."""
+        return self.current_hp == 0
         pass
 
     def attack_move(self) -> str:
         """Return the attack message for this Pokemon."""
+        return f'{self.name} uses {self.move}!'
         pass
 
     def description(self) -> str:
         """Return a description of this Pokemon."""
+        return f'{self.name} is a Normal type'
         pass
 
     def __str__(self) -> str:
         """Return a string representation of this Pokemon."""
+        return f'{self.name} ({self.current_hp}/{self.max_hp} HP)'
         pass
 
 
@@ -65,10 +75,13 @@ class FireType(Pokemon):
         burn_chance: float,
     ) -> None:
         """Initialise a new Fire type Pokemon."""
+        super().__init__(name, max_hp, attack, defence, move, move_power)
+        self.burn_chance = burn_chance
         pass
 
     def description(self) -> str:
         """Return a description of this Fire type Pokemon."""
+        return f'{self.name} is a Fire type with {self.burn_chance}% burn chance.'
         pass
 
 
@@ -86,8 +99,11 @@ class WaterType(Pokemon):
         swim_speed: int,
     ) -> None:
         """Initialise a new Water type Pokemon."""
+        super().__init__(name, max_hp, attack, defence, move, move_power)
+        self.swim_speed = swim_speed
         pass
 
     def description(self) -> str:
         """Return a description of this Water type Pokemon."""
+        return f'{self.name} is a Water type with swim speed {self.swim_speed}'
         pass

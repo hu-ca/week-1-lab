@@ -20,9 +20,18 @@ def personality_mapping(villagers: dict[str, str]) -> dict[str, list[str]]:
     """
     # YOUR CODE HERE
     # Remove pass when you implement
-    pass
+    personality_to_villagers: dict[str, list[str]] = {}
+    for villager, personality in villagers.items():
+        if personality not in personality_to_villagers:
+            personality_to_villagers[personality] = []
+        personality_to_villagers[personality].append(villager)
 
+    for personality in personality_to_villagers:
+        personality_to_villagers[personality].sort()
+
+    return personality_to_villagers
 
 # YOUR TESTS HERE (BONUS)
 # Write at least 3 tests for invert_personality_mapping
 # Test function names must start with "test_"
+

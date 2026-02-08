@@ -21,8 +21,10 @@ def count_species(villagers: list[tuple[str, str]]) -> dict[str, int]:
     """
     # YOUR CODE HERE
     # Remove pass when you implement
-    pass
-
+    species_counts: dict[str, int] = {}
+    for _, species in villagers:
+        species_counts[species] = species_counts.get(species, 0) + 1
+    return species_counts
 
 def test_count_species_basic():
     villagers = [("Maple", "Cub"), ("Raymond", "Cat"), ("Sherb", "Goat"), ("Marina", "Octopus")]

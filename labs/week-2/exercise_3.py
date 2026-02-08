@@ -66,7 +66,12 @@ def test_find_common_and_unique_complete_overlap():
     }
 
 def test_find_common_and_unique_empty_sets():
-    set_a = {}
-    set_b = {}
+    set_a = set()
+    set_b = set()
+    assert find_common_and_unique(set_a, set_b) == {
+        'common': set(),
+        'only_a': set(),
+        'only_b': set()
+    }
     
 
