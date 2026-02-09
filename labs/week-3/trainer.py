@@ -43,7 +43,11 @@ class Trainer:
 
     def get_pokemon_by_type(self, pokemon_type: type) -> list[Pokemon]:
         """Get a list of all Pokemon in the team that are instances of pokemon_type."""
-        return list(filter(lambda x: isinstance(self.team[x], pokemon_type), self.team))
+        all_types: list["Pokemon"] = []
+        for p in self.team:
+            if isinstance(p, pokemon_type):
+                all_types.append(p)
+        return all_types
         pass
 
     def __str__(self) -> str:
