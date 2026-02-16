@@ -53,7 +53,7 @@ class Pokemon:
 
     def description(self) -> str:
         """Return a description of this Pokemon."""
-        return f'{self.name} is a Normal type.'
+        return f'{self.name} is a Normal type'
         pass
 
     def __str__(self) -> str:
@@ -106,5 +106,5 @@ class WaterType(Pokemon):
 
     def description(self) -> str:
         """Return a description of this Water type Pokemon."""
-        return f'{self.name} is a Water type with swim speed {self.swim_speed}.'
+        return f'{self.name} is a Water type with swim speed {self.swim_speed}'
         pass

@@ -1,3 +1,4 @@
+git subtree add --prefix=labs/week-5 git@github.com:LCSI4208/week-5-lab.git main --squash
 # Week 5 Lab: Abstract Classes
 
 This lab will help you practice abstract base classes, properties with validation, and custom exceptions by building a Mario character system.
