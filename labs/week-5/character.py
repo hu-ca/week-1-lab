@@ -41,7 +41,75 @@ class Character(ABC):
         else:
             self._lives -= 1
     
+    @abstractmethod
+    def jump():
+        """Subclasses implement their jump style"""
+        pass
     
+    def run():
+        """Subclasses implement their run style"""
+        pass
 
+    def special_ability():
+        """Subclasses implement their unique ability"""
+        pass
 
+    def get_total_characters():
+        return Character.total_characters
+
+class Mario(Character):
+
+    def __init__(self):
+        super().__init__("Mario", 3, 1.0)
+
+    def jump(self):
+        return "Mario jumps!"
+
+    def run(self):
+        return "Mario runs at normal speed!"
+
+    def special_ability(self):
+        return "Mario uses fireball!"
+
+class Luigi(Character):
+    
+    def __init__(self, lives):
+        super().__init__("Luigi", 3, 0.9)
+
+    def jump(self):
+        return "Luigi jumps higher and floatier!"
+
+    def run(self):
+        return "Luigi runs with slippery momentum!"
+    
+    def special_ability(self):
+        return "Luigi uses Poltergust!"
+
+class Peach(Character):
+
+    def __init__(self):
+        super().__init__("Peach", 3, 0.85)
+
+    def jump(self):
+        return "Peach floats gracefully through the air!"
+
+    def run(self):
+        return "Peach runs elegantly!"
+
+    def special_ability(self):
+        return "Peach uses her parasol!"
+
+class Toad(Character):
+    
+    def __init__(self):
+        super().__init__("Toad", 3, 1.2)
+
+    def jump(self):
+        return "Toad does a short but quick jump!"
+
+    def run(self):
+        return "Toad zooms ahead!"
+
+    def special_ability(self):
+        return "Toad uses spore burst!"
 
